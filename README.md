@@ -1,6 +1,6 @@
 # Snake_Game
 
-Writing and Design: Reut Shmuel
+Writing & Design: Reut Shmuel
 
 Based on the engine of my lecturer Tamir Grossinger: https://github.com/tamirgrBGU/EngineVideoGames
 
