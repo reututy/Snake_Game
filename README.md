@@ -21,7 +21,7 @@ Enter "SPACE" to start moving your snake or pausing it.
 
 Enter 'P' to switch beteen camera mode (camera controlled by arrows) and snake mode (snake controlled by arrows).
 
-You can swim your snake everywere with the arrows - up, down, right, and left.
+Your snake can swim everywhere using the arrows - up, down, right, and left.
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/HowToPlay0-min.png)
 
