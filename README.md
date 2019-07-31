@@ -6,7 +6,7 @@ Based on the engine of my lecturer Tamir Grossinger: https://github.com/tamirgrB
 
 Implementation in openGL.
 
-Creates a snake using a Cubic Bezier from my "Cubic_Bezier" - a head, a tail and 3 cylinders for the body.
+Creates a snake using a Cubic Bezier from my "Cubic_Bezier" project - a head, a tail and 3 cylinders for the body.
 
 Implementation of Collision Detection.
 
@@ -15,7 +15,7 @@ Implementation of skinning using Dual Quaternions.
 
 # Welcome to "Snake in the sea" 3D!
 
-![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/HowToPlay0-min.png)
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/MainMenu0-min.png)
 
 Enter "SPACE" to start moving your snake or pausing it.
 
@@ -23,7 +23,7 @@ Enter 'P' to switch beteen camera mode (camera controlled by arrows) to snake mo
 
 You can swim your snake everywere with the arrows - up, down, right, and left.
 
-![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/MainMenu0-min.png)
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/HowToPlay0-min.png)
 
 If you manage to collect all rewards you are graded with three starts!
 
