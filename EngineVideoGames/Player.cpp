@@ -74,45 +74,6 @@ void Player::CreatePlayer()
 	//scn->shapeTransformation(Scene::xGlobalTranslate, 20);
 }
 
-//Credits: Almog Dubin
-void Player::AlignSegments(int not_moving_shape, int moving_shape)
-{
-	glm::vec3 not_moving_shape_vector = glm::normalize(glm::vec3(GetSegRot(not_moving_shape)*glm::vec4(1, 0, 0, 0)));
-	glm::vec3 moving_vector = glm::normalize(glm::vec3(GetSegRot(moving_shape)*glm::vec4(1, 0, 0, 0)));
-	glm::mat4 R = GetRotMat(moving_vector, not_moving_shape_vector);
-	scn->GetShape(moving_shape)->snakeRotate(R);
-	scn->GetShape(moving_shape + 1)->snakeRotate(glm::transpose(R));
-}
-
-//Credits: Almog Dubin
-glm::mat4 Player::GetSegRot(int indx)
-{
-	glm::mat4 rot = glm::mat4(1);
-	for (int i = indx; i > head_index ; i--)
-		rot *= scn->GetShape(i)->GetRot();
-	return rot;
-}
-
-//Credits: Almog Dubin
-glm::mat4 Player::GetRotMat(glm::vec3 not_moving_shape_vector, glm::vec3 moving_vector)
-{
-	not_moving_shape_vector = (INTERPOLATION*moving_vector + not_moving_shape_vector) / (INTERPOLATION + 1.0f);
-	glm::vec3 v = glm::cross(moving_vector, not_moving_shape_vector);
-	float c = glm::dot(moving_vector, not_moving_shape_vector);
-	if (abs(1.0f + c) < 0.001)
-	{
-		return glm::mat4(1);
-	}
-	glm::mat4 vx = glm::mat4(
-		glm::vec4(0, -v.z, v.y, 0),
-		glm::vec4(v.z, 0, -v.x, 0),
-		glm::vec4(-v.y, v.x, 0, 0),
-		glm::vec4(0, 0, 0, 0));
-	glm::mat4 unit = glm::mat4(1);
-	glm::mat4 R = unit + vx + vx * vx*(1.0f / (1.0f + c));
-	return R;
-}
-
 void Player::MoveRight()
 {
 	move_right = true;

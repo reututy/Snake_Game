@@ -8,7 +8,7 @@
 #define LBS_SHADER 2
 #define CYCLE 2
 #define BUBBLE_CYCLE 100
-#define ANGLE 10.0f
+#define ANGLE 5.0f
 #define BALL_SCALE 0.05
 #define BUBBLE_SCALE 0.02
 #define REWARD_TEX 7

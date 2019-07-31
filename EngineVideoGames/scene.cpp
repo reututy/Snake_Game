@@ -243,38 +243,6 @@ void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debu
 			Normal1 = Normal * Normal1;
 			MV1 = Normal1;
 			MV1 = MV1 * shapes[i]->makeTransScale(mat4(1));
-
-			/*
-			if (i == 32)
-			{
-				DQ = getQuaternion(MV1);
-				dqRot[0] = glm::vec4(DQ.real.w, DQ.real.x, DQ.real.y, DQ.real.z);
-				dqTrans[0] = glm::vec4(DQ.dual.w, DQ.dual.x, DQ.dual.y, DQ.dual.z);
-			}
-			else if (i == 33)
-			{
-				DQ = getQuaternion(MV1);
-				dqRot[1] = glm::vec4(DQ.real.w, DQ.real.x, DQ.real.y, DQ.real.z);
-				dqTrans[1] = glm::vec4(DQ.dual.w, DQ.dual.x, DQ.dual.y, DQ.dual.z);
-			}
-			else if (i == 34)
-			{
-				DQ = getQuaternion(MV1);
-				dqRot[2] = glm::vec4(DQ.real.w, DQ.real.x, DQ.real.y, DQ.real.z);
-				dqTrans[2] = glm::vec4(DQ.dual.w, DQ.dual.x, DQ.dual.y, DQ.dual.z);
-			}
-			else if (i == 35)
-			{
-				DQ = getQuaternion(MV1);
-				dqRot[3] = glm::vec4(DQ.real.w, DQ.real.x, DQ.real.y, DQ.real.z);
-				dqTrans[3] = glm::vec4(DQ.dual.w, DQ.dual.x, DQ.dual.y, DQ.dual.z);
-			}
-			else if (i == 36)
-			{
-				DQ = getQuaternion(MV1);
-				dqRot[4] = glm::vec4(DQ.real.w, DQ.real.x, DQ.real.y, DQ.real.z);
-				dqTrans[4] = glm::vec4(DQ.dual.w, DQ.dual.x, DQ.dual.y, DQ.dual.z);
-			}*/
 			
 			if (shaderIndx > 0)
 			{
@@ -534,91 +502,6 @@ void Scene::shapeTransformation(int type,float amt)
 	}
 }
 
-void Scene::cameraTransformation(int type, float amt, int index)
-{
-	vec3 newAxis;
-	if (glm::abs(amt) > 1e-5)
-	{
-		switch (type)
-		{
-		case xLocalTranslate:
-			cameras[index]->myTranslate(vec3(amt, 0, 0), 1);
-			break;
-		case yLocalTranslate:
-			cameras[index]->myTranslate(vec3(0, amt, 0), 1);
-			break;
-		case zLocalTranslate:
-			cameras[index]->myTranslate(vec3(0, 0, amt), 1);
-			break;
-		case xGlobalTranslate:
-			cameras[index]->myTranslate(vec3(amt, 0, 0), 0);
-			break;
-		case yGlobalTranslate:
-			cameras[index]->myTranslate(vec3(0, amt, 0), 0);
-			break;
-		case zGlobalTranslate:
-			cameras[index]->myTranslate(vec3(0, 0, amt), 0);
-			break;
-		case xLocalRotate:
-			cameras[index]->myRotate(amt, vec3(1, 0, 0), xAxis1);
-			break;
-		case yLocalRotate:
-			cameras[index]->myRotate(amt, vec3(0, 1, 0), -1);
-			break;
-		case zLocalRotate:
-			cameras[index]->myRotate(amt, vec3(0, 0, 1), zAxis1);
-			break;
-		case xGlobalRotate:
-			/*
-			if (pickedShape == -1)
-				globalSystemRot(amt, vec3(1, 0, 0), xAxis1);
-			else
-			{
-				if (direction == -1 && pickedShape + 2 < shapes.size())
-				{
-					OpositeDirectionRot(glm::vec3(1, 0, 0), amt);
-				}
-				else
-					shapes[pickedShape]->globalSystemRot(amt, vec3(1, 0, 0), xAxis1);
-			}*/
-			break;
-		case yGlobalRotate:
-			/*
-			if (pickedShape == -1)
-				globalSystemRot(amt, vec3(0, 1, 0), -1);
-			else
-			{
-				shapes[pickedShape]->globalSystemRot(amt, vec3(0, 1, 0), -1);
-				if (direction == -1)
-				{
-					OpositeDirectionRot(glm::vec3(0, 1, 0), amt);
-				}
-				else
-					shapes[pickedShape]->globalSystemRot(amt, vec3(1, 0, 0), xAxis1);
-			}*/
-			break;
-		case zGlobalRotate:
-			/*
-			if (pickedShape == -1)
-				globalSystemRot(amt, vec3(0, 0, 1), zAxis12);
-			else
-			{
-
-
-				if (direction == -1 && pickedShape + 2 < shapes.size())
-				{
-					OpositeDirectionRot(glm::vec3(0, 0, 1), amt);
-				}
-				else
-					shapes[pickedShape]->globalSystemRot(amt, vec3(0, 0, 1), zAxis12);
-			}*/
-			break;
-		default:
-			break;
-		}
-	}
-}
-
 void Scene::OpositeDirectionRot(glm::vec3 vec,float angle)
 {
 	int i=pickedShape;
@@ -716,7 +599,7 @@ glm::vec3 Scene::GetTipPositionInSystem(int indx)
 		return origin + shapes[j]->getVectorInSystem(glm::mat4(1),vec+glm::vec3(0,0,2))*(float)scaleFactor;
 		//return shapes[indx]->getTipPos(Normal1);
 	}
-	else if(indx ==0)
+	else if(indx == 0)
 		return vec3(shapes[0]->getTraslate());
 	else
 	{
@@ -1044,34 +927,4 @@ void Scene::CheckCollisionDetection(int num_of_shape)
 			}
 		}
 	}
-
-	/*
-	int box_to_draw_index;
-	Shape* shape1 = shapes[num_of_shape]; //the snake
-	for (int i = 0; i < shapes.size(); i++)
-	{
-		Shape* shape2 = shapes[i];
-		if ((shape2->GetMesh()->GetKind() == MeshConstructor::Kind::Reward ||
-			shape2->GetMesh()->GetKind() == MeshConstructor::Kind::Obstacle) && shape1->GetNumOfShape() != shape2->GetNumOfShape())
-		{
-			box_to_draw_index = shape1->CollisionDetection(shape2);
-			if (box_to_draw_index > -1)
-			{
-				if (shape1->GetMesh()->GetKind() == MeshConstructor::Kind::Reward && shape1->Getfound() == false)
-				{
-					shape2->Hide();
-					shape1->Setfound(true);
-				}
-				else if (shape2->GetMesh()->GetKind() == MeshConstructor::Kind::Reward && shape2->Getfound() == false)
-				{
-					shape2->Hide();
-					shape2->Setfound(true);
-					playTune("Sounds/eat.wav");
-				}
-				std::cout << "boom" << std::endl;
-				shapes[box_to_draw_index]->Unhide();
-			}
-		}
-	}
-	*/
 }

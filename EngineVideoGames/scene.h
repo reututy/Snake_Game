@@ -77,7 +77,6 @@ public:
 	glm::mat4 GetShapeTransformation() const;
 	
 	void shapeTransformation(int type,float amt);
-	void cameraTransformation(int type, float amt, int index); //Added
 	void shapeRotation(glm::vec3 v, float ang,int indx);
 	//void inline setPicked(int pickID){pickedShape = pickID;}
 	float picking(int x,int y);

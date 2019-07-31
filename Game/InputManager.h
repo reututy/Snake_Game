@@ -105,12 +105,6 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 					scn->GetPlayer()->SetMoveDown(true);
 				}
 				break;
-			case GLFW_KEY_M:
-				curr_mode = (curr_mode + 1) % NO_OF_MODES;
-				std::cout << "Current mode is: " << modes_names[curr_mode] << std::endl;
-				//TODO for loop on the snake body
-				//scn->ChangeShapeMode(scn->GetNumOfHead(), curr_mode);
-				break;
 			case GLFW_KEY_S: //Zoom in
 				scn->SetPickedShape(-1);
 				scn->shapeTransformation(scn->zCameraTranslate, 5.0f);
