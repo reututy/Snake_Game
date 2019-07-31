@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	Viewport vp6(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT);
 	
 	Game *scn = new Game(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp1); //free view camera - 0
-	scn->AddCamera(glm::vec3(0.0f, 30.0f, 0.5f), 75.0f, zNear, zFar, vp2);	//up view camera - 1
+	scn->AddCamera(glm::vec3(0.0f, 30.0f, 0.5f), 70.0f, zNear, zFar, vp2);	//up view camera - 1
 	scn->AddCamera(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp3);	//snake view camera - 2
 	scn->AddCamera(glm::vec3(-950.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp4);	//Menu camera - 3
 

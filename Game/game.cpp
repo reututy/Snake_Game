@@ -3,7 +3,7 @@
 
 #define CONTROL_POINT_SCALE 0.1
 #define WATER_PLANE_SCALE 180
-#define SPEED 0.2
+#define SPEED 0.1
 #define BASIC_SHADER 1
 #define LBS_SHADER 2
 #define CYCLE 2
@@ -254,9 +254,8 @@ void Game::addObstacles()
 	shapeTransformation(xScale, 2);
 	shapeTransformation(yScale, 2);
 	shapeTransformation(zScale, 2);
-	shapeTransformation(xGlobalTranslate, 10);
-	//shapeTransformation(yGlobalTranslate, -10 / 2);
-	shapeTransformation(zGlobalTranslate, 8);
+	shapeTransformation(xGlobalTranslate, 14);
+	shapeTransformation(zGlobalTranslate, 14);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //27 Add copy cube = Obstacle 1
@@ -266,9 +265,8 @@ void Game::addObstacles()
 	shapeTransformation(xScale, 2);
 	shapeTransformation(yScale, 2);
 	shapeTransformation(zScale, 5);
-	shapeTransformation(xGlobalTranslate, 10);
+	shapeTransformation(xGlobalTranslate, 23);
 	shapeTransformation(yGlobalTranslate, -2);
-	//shapeTransformation(zGlobalTranslate, 5);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //28 Add copy cube = Obstacle 1
@@ -278,21 +276,18 @@ void Game::addObstacles()
 	shapeTransformation(xScale, 5);
 	shapeTransformation(yScale, 2);
 	shapeTransformation(zScale, 2);
-	//shapeTransformation(xGlobalTranslate, -8);
 	shapeTransformation(yGlobalTranslate, -5);
-	shapeTransformation(zGlobalTranslate, -8);
+	shapeTransformation(zGlobalTranslate, -18);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //29 Add copy cube = Obstacle 1
 	SetNumOfShape();
 	pickedShape = 29;
 	SetShapeTex(pickedShape, 6);
-	shapeTransformation(xScale, 5);
+	shapeTransformation(xScale, 8);
 	shapeTransformation(yScale, 2);
 	shapeTransformation(zScale, 2);
-	//shapeTransformation(xGlobalTranslate, -13);
-	//shapeTransformation(yGlobalTranslate, -10 / 2);
-	shapeTransformation(zGlobalTranslate, 10);
+	shapeTransformation(zGlobalTranslate, 23);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //30 Add copy cube = Obstacle 1
@@ -302,9 +297,9 @@ void Game::addObstacles()
 	shapeTransformation(xScale, 2);
 	shapeTransformation(yScale, 2);
 	shapeTransformation(zScale, 5);
-	shapeTransformation(xGlobalTranslate, -10);
+	shapeTransformation(xGlobalTranslate, -25);
 	shapeTransformation(yGlobalTranslate, -2);
-	shapeTransformation(zGlobalTranslate, -3);
+	shapeTransformation(zGlobalTranslate, -8);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //31 Add copy cube = Obstacle 1
@@ -314,9 +309,9 @@ void Game::addObstacles()
 	shapeTransformation(xScale, 2);
 	shapeTransformation(yScale, 2);
 	shapeTransformation(zScale, 5);
-	shapeTransformation(xGlobalTranslate, -10);
+	shapeTransformation(xGlobalTranslate, -25);
 	shapeTransformation(yGlobalTranslate, -8);
-	shapeTransformation(zGlobalTranslate, 3);
+	shapeTransformation(zGlobalTranslate, 8);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 }
 
@@ -334,17 +329,17 @@ void Game::addRewards()
 	SetNumOfShape();
 	pickedShape = 33;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, -15);
+	shapeTransformation(xGlobalTranslate, -45);
 	shapeTransformation(yGlobalTranslate, -15);
-	shapeTransformation(zGlobalTranslate, 13);
+	shapeTransformation(zGlobalTranslate, 40);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //34 Add copy cube = Obstacle 1
 	SetNumOfShape();
 	pickedShape = 34;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, 8);
-	shapeTransformation(zGlobalTranslate, 20);
+	shapeTransformation(xGlobalTranslate, 10);
+	shapeTransformation(zGlobalTranslate, 45);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //35 Add copy cube = Obstacle 1
@@ -352,31 +347,31 @@ void Game::addRewards()
 	pickedShape = 35;
 	SetShapeTex(pickedShape, REWARD_TEX);
 	shapeTransformation(yGlobalTranslate, -10);
-	shapeTransformation(zGlobalTranslate, -22);
+	shapeTransformation(zGlobalTranslate, -42);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //36 Add copy cube = Obstacle 1
 	SetNumOfShape();
 	pickedShape = 36;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, -20);
+	shapeTransformation(xGlobalTranslate, -49);
 	shapeTransformation(yGlobalTranslate, -4);
-	shapeTransformation(zGlobalTranslate, -22);
+	shapeTransformation(zGlobalTranslate, -48);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //37 Add copy cube = Obstacle 1
 	SetNumOfShape();
 	pickedShape = 37;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, 20);
-	shapeTransformation(zGlobalTranslate, 12);
+	shapeTransformation(xGlobalTranslate, 28);
+	shapeTransformation(zGlobalTranslate, 23);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //38 Add copy cube = Obstacle 1
 	SetNumOfShape();
 	pickedShape = 38;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, 20);
+	shapeTransformation(xGlobalTranslate, 46);
 	shapeTransformation(yGlobalTranslate, -4);
 	shapeTransformation(zGlobalTranslate, -8);
 	SetShapeShader(pickedShape, BASIC_SHADER);
