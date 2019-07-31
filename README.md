@@ -21,7 +21,7 @@ Enter "SPACE" to start moving your snake.
 
 Enter 'P' to switch beteen camera mode (camera controlled by arrows) to snake mode (snake controlled by arrows).
 
-You can swim with your snake everywere with the arrows - up, down, right, and left.
+You can swim your snake everywere with the arrows - up, down, right, and left.
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/MainMenu0-min.png)
 
@@ -29,7 +29,15 @@ If you manage to collect all rewards you are graded with three starts!
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/WinStar3-min.png)
 
-If you bump into a rock or swimming to far from the game area so it's a Game Over!
+If you bump into a rock or swimming too far from the game area so it's a Game Over!
 
 ![alt text](https://github.com/reututy/Snake_Game/blob/master/res/textures/GameOver-min.png)
+
+There are three viewports for this game:
+
+- Up view - in the left up corner of the screen
+
+- Free view - in the left buttom corner of the screen
+
+- Snake view - in the right side of the screen
 
