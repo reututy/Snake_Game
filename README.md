@@ -17,7 +17,7 @@ Implementation of skinning using Dual Quaternions.
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/HowToPlay0-min.png)
 
-Enter "SPACE" to start moving your snake.
+Enter "SPACE" to start moving your snake or pausing it.
 
 Enter 'P' to switch beteen camera mode (camera controlled by arrows) to snake mode (snake controlled by arrows).
 
@@ -41,3 +41,6 @@ There are three viewports for this game:
 
 - Snake view - in the right side of the screen
 
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/three_views.jpg)
+
+The 'free view' and the 'snake view' are able to be controlled via camera mode.
