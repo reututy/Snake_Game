@@ -19,7 +19,7 @@ Implementation of skinning using Dual Quaternions.
 
 Enter "SPACE" to start moving your snake or pausing it.
 
-Enter 'P' to switch beteen camera mode (camera controlled by arrows) to snake mode (snake controlled by arrows).
+Enter 'P' to switch beteen camera mode (camera controlled by arrows) and snake mode (snake controlled by arrows).
 
 You can swim your snake everywere with the arrows - up, down, right, and left.
 
