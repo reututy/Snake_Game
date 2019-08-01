@@ -11,8 +11,8 @@
 #define ANGLE 5.0f
 #define BALL_SCALE 0.05
 #define BUBBLE_SCALE 0.02
-#define REWARD_TEX 7
-#define BUBBLE_TEX 8
+#define BUBBLE_TEX 7
+#define REWARD_TEX 10
 
 bool once = false;
 int cycle = 0;
@@ -378,13 +378,13 @@ void Game::addWinDoor()
 	shapeTransformation(yScale, 26.76);
 	shapeTransformation(zScale, 13.8);
 	shapeTransformation(yGlobalRotate, 180);
-	SetShapeTex(pickedShape, 20);
+	SetShapeTex(pickedShape, 9);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 }
 
 void Game::addMenus()
 {
-	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //39 Add copy cube = door
+	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Obstacle); //40 Add copy screen for menues
 	SetNumOfShape();
 	pickedShape = 40;
 	shapeTransformation(xGlobalTranslate, -700);
@@ -394,7 +394,7 @@ void Game::addMenus()
 	//shapeTransformation(yGlobalRotate, 180);
 	//shapeTransformation(xGlobalRotate, 180);
 	shapeTransformation(xGlobalRotate, 180);
-	SetShapeTex(pickedShape, 9);
+	SetShapeTex(pickedShape, 13);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 }
 

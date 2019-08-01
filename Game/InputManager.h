@@ -6,6 +6,20 @@
 #include <thread>
 
 #define NO_OF_MODES 8
+#define SCREEN 40
+#define MainMenu0 13
+#define MainMenu1 14
+#define MainMenu2 15
+#define AboutMenu 16
+#define AboutMenuBack 17
+#define MainMenu3 18
+#define HowToPlay0 19
+#define HowToPlay1 20
+#define GameOver 21
+#define WinStar1 21
+#define WinStar2 23
+#define WinStar3 24
+
 int curr_mode = Scene::modes::QUADS;
 char modes_names[8][20] = { "POINTS", "LINES", "LINE_LOOP", "LINE_STRIP", "TRIANGLES", "TRIANGLE_STRIP", "TRIANGLE_FAN", "QUADS" };
 int twice = 1;
@@ -115,42 +129,42 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 					}
 				}
 				break;
-			case GLFW_KEY_S: //Zoom in
+			case GLFW_KEY_S: //Translate backwards
 				if (scn->GetMainView() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(1, 0, 0), 0); //x
 					scn->GetCamera(2)->myTranslate(glm::vec3(1, 0, 0), 0); //x
 				}
 				break;
-			case GLFW_KEY_W: //Zoom out
+			case GLFW_KEY_W: //Translate forwards
 				if (scn->GetMainView() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(-1, 0, 0), 0); //x
 					scn->GetCamera(2)->myTranslate(glm::vec3(-1, 0, 0), 0); //x
 				}
 				break;
-			case GLFW_KEY_A: //Zoom left
+			case GLFW_KEY_A: //Translate left
 				if (scn->GetMainView() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, 1), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, 1), 0); //z
 				}
 				break;
-			case GLFW_KEY_D: //Zoom right
+			case GLFW_KEY_D: //Translate right
 				if (scn->GetMainView() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, -1), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, -1), 0); //z
 				}
 				break;
-			case GLFW_KEY_E: //Zoom up
+			case GLFW_KEY_E: //Translate up
 				if (scn->GetMainView() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 1, 0), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 1, 0), 0); //z
 				}
 				break;
-			case GLFW_KEY_Q: //Zoom down
+			case GLFW_KEY_Q: //Translate down
 				if (scn->GetMainView() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, -1, 0), 0); //z
@@ -177,7 +191,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 					play = 1;
 					scn->SetFinishView();
 					scn->SetPlayAgain();
-					scn->SetShapeTex(40, 9);
+					scn->SetShapeTex(SCREEN, MainMenu0);
 					if (scn->GetMainView() == false)
 						scn->SetMainView();
 					if (scn->GetMenuView() == false)
@@ -203,17 +217,17 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 				}
 				if (play == 1 && scn->GetMenuView() == true)
 				{
-					scn->SetShapeTex(40, 10);
+					scn->SetShapeTex(SCREEN, MainMenu1);
 					if (scn->GetPlayAgain() == true)
 						scn->SetPlayAgain();
 				}
 				else if (play == 2 && scn->GetMenuView() == true)
 				{
-					scn->SetShapeTex(40, 21);
+					scn->SetShapeTex(SCREEN, HowToPlay0);
 				}
 				else if (play == 3 && scn->GetMenuView() == true)
 				{
-					scn->SetShapeTex(40, 22);
+					scn->SetShapeTex(SCREEN, HowToPlay1);
 				}
 				else if (play == 4 && scn->GetMenuView() == true)
 				{
@@ -226,11 +240,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 			case GLFW_KEY_2: //About Button
 				if (twice == 1 && scn->GetAboutView() == false)
 				{
-					scn->SetShapeTex(40, 11);
+					scn->SetShapeTex(SCREEN, MainMenu2);
 				}
 				else if (twice == 2 && scn->GetAboutView() == false)
 				{
-					scn->SetShapeTex(40, 12);
+					scn->SetShapeTex(SCREEN, AboutMenu);
 					scn->SetAboutView();
 					twice = 0;
 				}
@@ -239,11 +253,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 			case GLFW_KEY_3: //Quit Button
 				if (twice == 1 && scn->GetQuitView() == false)
 				{
-					scn->SetShapeTex(40, 14);
+					scn->SetShapeTex(SCREEN, MainMenu3);
 				}
 				else if (twice == 2 && scn->GetQuitView() == false)
 				{
-					scn->SetShapeTex(40, 9);
+					scn->SetShapeTex(SCREEN, MainMenu0);
 					scn->SetQuitView();
 					twice = 0;
 					glfwSetWindowShouldClose(window, GLFW_TRUE);
@@ -254,11 +268,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 			case GLFW_KEY_4: //Back Button
 				if (twice == 1 && scn->GetAboutView() == true)
 				{
-					scn->SetShapeTex(40, 13);
+					scn->SetShapeTex(SCREEN, AboutMenuBack);
 				}
 				else if (twice == 2 && scn->GetAboutView() == true)
 				{
-					scn->SetShapeTex(40, 9);
+					scn->SetShapeTex(SCREEN, MainMenu0);
 					scn->SetAboutView();
 					twice = 0;
 				}

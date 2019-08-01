@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 	Game *scn = new Game(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp1); //snake view camera - 0
 	scn->AddCamera(glm::vec3(0.0f, 30.0f, 0.5f), 70.0f, zNear, zFar, vp2);	//up view camera - 1
 	scn->AddCamera(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp3);	//free view camera - 2
-	//scn->AddCamera(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp3);	//free view camera - 2
 	scn->AddCamera(glm::vec3(-950.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp4);	//Menu camera - 3
 
 	scn->shapeTransformation(scn->zCameraTranslate, 80.0f);
@@ -65,26 +64,32 @@ int main(int argc, char *argv[])
 	scn->AddTexture("../res/textures/game/water_front.png", false); //3
 	scn->AddTexture("../res/textures/game/water_up.png", false); //4
 	scn->AddTexture("../res/textures/game/water_ground.png", false); //5
-	//Rewords and Obstacles textures:
+	//Obstacles textures:
 	scn->AddTexture("../res/textures/game/rock.png", false); //6
-	scn->AddTexture("../res/textures/game/gold_shine.png", false); //7
-	scn->AddTexture("../res/textures/game/bubble_blue.png", false); //8
+	scn->AddTexture("../res/textures/game/bubble_blue.png", false); //7
+	scn->AddTexture("../res/textures/game/black.png", false); //8
+	scn->AddTexture("../res/textures/game/door.png", false); //9
+	//Rewords textures:
+	scn->AddTexture("../res/textures/shines/gold_shine.png", false); //10
+	scn->AddTexture("../res/textures/game/shines/red_shine.png", false); //11
+	scn->AddTexture("../res/textures/game/shines/pink_shine.png", false); //12
 
-	scn->AddTexture("../res/textures/Menues-min/MainMenu0-min.png", false); //9
-	scn->AddTexture("../res/textures/Menues-min/MainMenu1-min.png", false); //10
-	scn->AddTexture("../res/textures/Menues-min/MainMenu2-min.png", false); //11
-	scn->AddTexture("../res/textures/Menues-min/AboutMenu-min.png", false); //12
-	scn->AddTexture("../res/textures/Menues-min/AboutMenuBack-min.png", false); //13
-	scn->AddTexture("../res/textures/Menues-min/MainMenu3-min.png", false); //14
-	scn->AddTexture("../res/textures/Menues-min/GameOver-min.png", false); //15
-	scn->AddTexture("../res/textures/Menues-min/WinStar1-min.png", false); //16
-	scn->AddTexture("../res/textures/Menues-min/WinStar2-min.png", false); //17
-	scn->AddTexture("../res/textures/Menues-min/WinStar3-min.png", false); //18
-	scn->AddTexture("../res/textures/game/black.png", false); //19
-	scn->AddTexture("../res/textures/game/door.png", false); //20
-	scn->AddTexture("../res/textures/Menues-min/HowToPlay0-min.png", false); //21
-	scn->AddTexture("../res/textures/Menues-min/HowToPlay1-min.png", false); //22
+	scn->AddTexture("../res/textures/Menues-min/MainMenu0-min.png", false); //13
+	scn->AddTexture("../res/textures/Menues-min/MainMenu1-min.png", false); //14
+	scn->AddTexture("../res/textures/Menues-min/MainMenu2-min.png", false); //15
+	scn->AddTexture("../res/textures/Menues-min/AboutMenu-min.png", false); //16
+	scn->AddTexture("../res/textures/Menues-min/AboutMenuBack-min.png", false); //17
+	scn->AddTexture("../res/textures/Menues-min/MainMenu3-min.png", false); //18
+	scn->AddTexture("../res/textures/Menues-min/HowToPlay0-min.png", false); //19
+	scn->AddTexture("../res/textures/Menues-min/HowToPlay1-min.png", false); //20
+	scn->AddTexture("../res/textures/Menues-min/GameOver-min.png", false); //21
+	scn->AddTexture("../res/textures/Menues-min/WinStar1-min.png", false); //22
+	scn->AddTexture("../res/textures/Menues-min/WinStar2-min.png", false); //23
+	scn->AddTexture("../res/textures/Menues-min/WinStar3-min.png", false); //24
+
 	
+	
+
 	display.setScene(scn);
 
 	while (!display.closeWindow())
