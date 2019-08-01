@@ -241,6 +241,8 @@ void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debu
 			}
 
 			Normal1 = Normal * Normal1;
+			//if (pickedShape == 25) //added
+				//Normal1 = -Normal1;  //added
 			MV1 = Normal1;
 			MV1 = MV1 * shapes[i]->makeTransScale(mat4(1));
 			

@@ -17,25 +17,32 @@ int main(int argc, char *argv[])
 	Viewport vp5(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT);
 	Viewport vp6(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT);
 	
-	Game *scn = new Game(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp1); //free view camera - 0
+	Game *scn = new Game(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp1); //snake view camera - 0
 	scn->AddCamera(glm::vec3(0.0f, 30.0f, 0.5f), 70.0f, zNear, zFar, vp2);	//up view camera - 1
-	scn->AddCamera(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp3);	//snake view camera - 2
+	scn->AddCamera(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp3);	//free view camera - 2
+	//scn->AddCamera(glm::vec3(0.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp3);	//free view camera - 2
 	scn->AddCamera(glm::vec3(-950.0f, 0.0f, 1.0f), CAM_ANGLE, zNear, zFar, vp4);	//Menu camera - 3
 
 	scn->shapeTransformation(scn->zCameraTranslate, 80.0f);
 
-	//Camera 0:
+	//Camera 0: snake view
 	scn->GetCamera(0)->myTranslate(glm::vec3(2, 0, 0), 0); //x
 	scn->GetCamera(0)->myTranslate(glm::vec3(0, 2, 0), 0); //y
 	scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, -4), 0); //z
 	scn->GetCamera(0)->myRotate(90, glm::vec3(0, 1, 0), -1); //rotate in 90 degrees
 
-	//Camera 1:
+	//Camera 1: up view
 	scn->GetCamera(1)->myTranslate(glm::vec3(4, 0, 0), -1);
 	scn->GetCamera(1)->myTranslate(glm::vec3(0, 80, 0), -1);
 	scn->GetCamera(1)->myRotate(90, glm::vec3(0, 1, 0), -1);
 
-	//Camera 3:
+	//Camera 2: free view
+	scn->GetCamera(2)->myTranslate(glm::vec3(100, 0, 0), 0); //x
+	scn->GetCamera(2)->myTranslate(glm::vec3(0, 20, 0), 0); //y
+	scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, -4), 0); //z
+	scn->GetCamera(2)->myRotate(90, glm::vec3(0, 1, 0), -1); //rotate in 90 degrees
+
+	//Camera 3: Menu view
 	scn->GetCamera(3)->myTranslate(glm::vec3(-600, 0, 0), -1);
 
 	Display display(DISPLAY_WIDTH, DISPLAY_HEIGHT, "OpenGL");

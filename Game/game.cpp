@@ -202,11 +202,10 @@ void Game::addBoundryBoxes()
 	shapeTransformation(yScale, WATER_PLANE_SCALE);
 	shapeTransformation(zScale, 0.1);
 	shapeTransformation(zGlobalTranslate, -WATER_PLANE_SCALE / 0.1);
-	shapeTransformation(xGlobalRotate, 180);
-	shapeTransformation(zGlobalRotate, 180);
+	shapeTransformation(yGlobalRotate, 180);
 	num_of_right_cube = 24;
 
-	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Wall); //25 Add copy cube = right
+	addShapeCopy(2, -1, TRIANGLES, MeshConstructor::Kind::Wall); //25 Add copy cube = left
 	SetNumOfShape();
 	pickedShape = 25;
 	shapeTransformation(xScale, WATER_PLANE_SCALE);
@@ -215,17 +214,6 @@ void Game::addBoundryBoxes()
 	shapeTransformation(zGlobalTranslate, WATER_PLANE_SCALE / 0.1);
 	shapeTransformation(xGlobalRotate, 180);
 	shapeTransformation(zGlobalRotate, 180);
-	num_of_left_cube = 25;
-
-	//Set the parents to connect the Boxes:
-	/*
-	setParent(num_of_front_cube, -1);
-	setParent(num_of_back_cube, num_of_front_cube);
-	setParent(num_of_up_cube, num_of_front_cube);
-	setParent(num_of_down_cube, num_of_front_cube);
-	setParent(num_of_right_cube, num_of_front_cube);
-	setParent(num_of_left_cube, num_of_front_cube);
-	*/
 
 	//Set boxes textures:
 	SetShapeTex(num_of_front_cube, 2);
@@ -984,12 +972,12 @@ void Game::SkinningUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, cons
 	s->SetUniform4vArr5("dqRot", dqRot, shaderIndx);
 	s->SetUniform4vArr5("dqTrans", dqTrans, shaderIndx);
 	s->SetUniform1i("index", index);
-	s->SetUniform4f("lightDirection", 0.0f, -1.0f, -1.0f, 0.0f);
+	s->SetUniform4f("lightDirection", 0.0f, 0.0f, 0.0f, 0.0f);
 
 	if (shaderIndx == 0) //picking shader
 		s->SetUniform4f("lightColor", r / 255.0f, g / 255.0f, b / 255.0f, 1.0f);
 	else //other shader
-		s->SetUniform4f("lightColor", 1.0f, 1.0f, 1.0f, 1.0f);
+		s->SetUniform4f("lightColor", 5.0f, 5.0f, 5.0f, 1.0f);
 	s->Unbind();
 	CheckCollisionDetection(snake->GetHeadIndex());
 }

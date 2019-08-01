@@ -118,15 +118,43 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 			case GLFW_KEY_S: //Zoom in
 				if (scn->GetMainView() == false)
 				{
-					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, -1), 0); //z
-					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, -1), 0); //z
+					scn->GetCamera(0)->myTranslate(glm::vec3(1, 0, 0), 0); //x
+					scn->GetCamera(2)->myTranslate(glm::vec3(1, 0, 0), 0); //x
 				}
 				break;
 			case GLFW_KEY_W: //Zoom out
 				if (scn->GetMainView() == false)
 				{
+					scn->GetCamera(0)->myTranslate(glm::vec3(-1, 0, 0), 0); //x
+					scn->GetCamera(2)->myTranslate(glm::vec3(-1, 0, 0), 0); //x
+				}
+				break;
+			case GLFW_KEY_A: //Zoom left
+				if (scn->GetMainView() == false)
+				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, 1), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, 1), 0); //z
+				}
+				break;
+			case GLFW_KEY_D: //Zoom right
+				if (scn->GetMainView() == false)
+				{
+					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, -1), 0); //z
+					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, -1), 0); //z
+				}
+				break;
+			case GLFW_KEY_E: //Zoom up
+				if (scn->GetMainView() == false)
+				{
+					scn->GetCamera(0)->myTranslate(glm::vec3(0, 1, 0), 0); //z
+					scn->GetCamera(2)->myTranslate(glm::vec3(0, 1, 0), 0); //z
+				}
+				break;
+			case GLFW_KEY_Q: //Zoom down
+				if (scn->GetMainView() == false)
+				{
+					scn->GetCamera(0)->myTranslate(glm::vec3(0, -1, 0), 0); //z
+					scn->GetCamera(2)->myTranslate(glm::vec3(0, -1, 0), 0); //z
 				}
 				break;
 			case GLFW_KEY_P: //Play
