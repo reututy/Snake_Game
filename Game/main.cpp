@@ -71,8 +71,8 @@ int main(int argc, char *argv[])
 	scn->AddTexture("../res/textures/game/door.png", false); //9
 	//Rewords textures:
 	scn->AddTexture("../res/textures/shines/gold_shine.png", false); //10
-	scn->AddTexture("../res/textures/game/shines/red_shine.png", false); //11
-	scn->AddTexture("../res/textures/game/shines/pink_shine.png", false); //12
+	scn->AddTexture("../res/textures/shines/red_shine.png", false); //11
+	scn->AddTexture("../res/textures/shines/pink_shine.png", false); //12
 
 	scn->AddTexture("../res/textures/Menues-min/MainMenu0-min.png", false); //13
 	scn->AddTexture("../res/textures/Menues-min/MainMenu1-min.png", false); //14

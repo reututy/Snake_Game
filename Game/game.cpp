@@ -20,6 +20,7 @@ int bubble_cycle = 0;
 bool bubble_up = true;
 bool bubble_sound = true;
 int bubble_kind = 0;
+int reward_cycle = 0;
 
 static void printMat(const glm::mat4 mat)
 {
@@ -820,6 +821,43 @@ void Game::Motion()
 		shapeTransformation(zLocalTranslate, SPEED*snake->GetDirection().z);
 		cycle++;
 	}
+	
+	//Changing colors for rewards:
+	if (reward_cycle == 10)
+	{
+		for (int i = 0; i < GetSizeOfShapes(); i++)
+		{
+			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+				SetShapeTex(i, 10);
+		}
+	}
+	else if (reward_cycle == 30)
+	{
+		for (int i = 0; i < GetSizeOfShapes(); i++)
+		{
+			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+				SetShapeTex(i, 11);
+		}
+	}
+	else if (reward_cycle == 50)
+	{
+		for (int i = 0; i < GetSizeOfShapes(); i++)
+		{
+			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+				SetShapeTex(i, 12);
+		}
+	}
+	else if (reward_cycle == 70)
+	{
+		for (int i = 0; i < GetSizeOfShapes(); i++)
+		{
+			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+				SetShapeTex(i, 11);
+		}
+	}
+	if (reward_cycle == 80)
+		reward_cycle = 0;
+	reward_cycle++;
 
 	//Bubble truble:
 	/*
