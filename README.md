@@ -41,8 +41,14 @@ There are three viewports for this game:
 
 - Snake view - in the right side of the screen
 
-![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/three_views.jpg)
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/three_views1.jpg)
 
 You can change between 'up view' and 'snake view' by pressing 'V'.
 
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/three_views2.jpg)
+
 The 'free view' and the 'snake view' are able to be controlled via camera mode.
+
+In camera mode you can rotate the camera using the arrows - up, down, right, and left.
+
+You can also translate the camera using 'W', 'S', 'A', 'D', 'E', 'Q' - forwards, backwards, right, left, up, and down repectively.
