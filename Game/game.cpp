@@ -409,91 +409,83 @@ void Game::addBubbles()
 	SetNumOfShape();
 	pickedShape = 41;
 	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 100);
-	shapeTransformation(yGlobalTranslate, -795);
+	shapeTransformation(xGlobalTranslate, -0.8);
+	shapeTransformation(yGlobalTranslate, 0.085);
+	shapeTransformation(zGlobalTranslate, 1);
+	shapeTransformation(xScale, 0.1);
+	shapeTransformation(yScale, 0.1);
+	shapeTransformation(zScale, 0.1);
 	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
 
 	addShapeCopy(41, -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble);
 	SetNumOfShape();
 	pickedShape = 42;
 	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 120);
-	shapeTransformation(yGlobalTranslate, -850);
-	shapeTransformation(xGlobalTranslate, -50);
+	shapeTransformation(xGlobalTranslate, -1.3);
+	shapeTransformation(yGlobalTranslate, 0.2);
+	shapeTransformation(zGlobalTranslate, 1);
+	shapeTransformation(xScale, 0.1);
+	shapeTransformation(yScale, 0.1);
+	shapeTransformation(zScale, 0.1);
 	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
 
 	addShapeCopy(41, -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble);
 	SetNumOfShape();
 	pickedShape = 43;
 	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 120);
-	shapeTransformation(yGlobalTranslate, -792);
-	shapeTransformation(xGlobalTranslate, -100);
+	shapeTransformation(xGlobalTranslate, -1.6);
+	shapeTransformation(yGlobalTranslate, 0.6);
+	shapeTransformation(zGlobalTranslate, 1);
+	shapeTransformation(xScale, 0.1);
+	shapeTransformation(yScale, 0.1);
+	shapeTransformation(zScale, 0.1);
 	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
 
-	addShapeCopy(41, -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble);
+	addShapeFromFile("../res/objs/Walrus.obj", -1, TRIANGLES, MeshConstructor::Kind::Default, 0);	//Walrus
 	SetNumOfShape();
 	pickedShape = 44;
-	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 120);
-	shapeTransformation(yGlobalTranslate, -950);
-	shapeTransformation(xGlobalTranslate, -60);
-	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
+	SetShapeTex(pickedShape, 25);
+	shapeTransformation(zGlobalTranslate, -35);
+	shapeTransformation(yGlobalTranslate, -8);
+	shapeTransformation(yGlobalRotate, -90);
+	shapeTransformation(xScale, 0.03);
+	shapeTransformation(yScale, 0.03);
+	shapeTransformation(zScale, 0.03);
 
-	addShapeCopy(41, -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble);
+	addShapeFromFile("../res/objs/sea_horse.obj", -1, TRIANGLES, MeshConstructor::Kind::Default, 0);	//sea_horse 1
 	SetNumOfShape();
 	pickedShape = 45;
-	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 130);
-	shapeTransformation(yGlobalTranslate, -980);
-	shapeTransformation(xGlobalTranslate, -110);
-	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
+	SetShapeTex(pickedShape, 26);
+	shapeTransformation(xGlobalTranslate, -5);
+	shapeTransformation(zGlobalTranslate, 10);
+	shapeTransformation(xGlobalRotate, -90);
+	shapeTransformation(xScale, 0.1);
+	shapeTransformation(yScale, 0.1);
+	shapeTransformation(zScale, 0.1);
 
-	addShapeCopy(41, -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble);
+	addShapeCopy(45, -1, TRIANGLES, MeshConstructor::Kind::Default);
 	SetNumOfShape();
 	pickedShape = 46;
-	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 130);
-	shapeTransformation(yGlobalTranslate, -960);
-	shapeTransformation(xGlobalTranslate, -30);
-	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
-
-	addShapeCopy(41, -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble);
+	SetShapeTex(pickedShape, 26);
+	shapeTransformation(xGlobalTranslate, -3);
+	shapeTransformation(zGlobalTranslate, 8);
+	shapeTransformation(xGlobalRotate, -90);
+	shapeTransformation(zGlobalRotate, 5);
+	shapeTransformation(xScale, 0.1);
+	shapeTransformation(yScale, 0.1);
+	shapeTransformation(zScale, 0.1);
+	
+	addShapeFromFile("../res/objs/coral.obj", -1, TRIANGLES, MeshConstructor::Kind::Default, 0);	//coral
 	SetNumOfShape();
 	pickedShape = 47;
-	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xScale, 0.0085);
-	shapeTransformation(yScale, 0.0085);
-	shapeTransformation(zScale, 0.0085);
-	shapeTransformation(zGlobalTranslate, 130);
-	shapeTransformation(yGlobalTranslate, -1020);
-	shapeTransformation(xGlobalTranslate, -50);
-	SetShapeShader(pickedShape, BASIC_SHADER);
-	shapes[pickedShape]->Hide();
+	SetShapeTex(pickedShape, 28);
+	shapeTransformation(xGlobalTranslate, 110);
+	shapeTransformation(yGlobalTranslate, -180);
+	shapeTransformation(zGlobalTranslate, -110);
+	shapeTransformation(xGlobalRotate, -90);
+	shapeTransformation(xScale, 0.8);
+	shapeTransformation(yScale, 0.8);
+	shapeTransformation(zScale, 0.8);
 }
 
 void Game::Init()
@@ -858,58 +850,6 @@ void Game::Motion()
 	if (reward_cycle == 80)
 		reward_cycle = 0;
 	reward_cycle++;
-
-	//Bubble truble:
-	/*
-	if (GetMainView() == false)
-	{
-		if (bubble_up == true) //bubbles goes up
-		{
-			if (bubble_kind % 3 == 0)
-			{
-				if (bubble_sound == true)
-				{
-					//playTune("Sounds/blop.wav");
-					bubble_sound = false;
-				}
-				//for (int i = 41; i < 48; i++)
-				for (int i = 41; i < 43; i++)
-				{
-					pickedShape = i;
-					shapes[i]->Unhide();
-					shapeTransformation(yGlobalTranslate, 0.3 * 90);
-				}
-			}
-		}
-		else //bubbles goes down
-		{
-			if (bubble_kind % 3 == 1)
-			{
-				//for (int i = 41; i < 48; i++)
-				for (int i = 41; i < 43; i++)
-				{
-					pickedShape = i;
-					shapes[i]->Hide();
-					//shapeTransformation(yGlobalTranslate, 0.3 * -90);
-				}
-			}
-		}
-		bubble_cycle++;
-
-		if (bubble_cycle == BUBBLE_CYCLE)
-		{
-			if (bubble_up == true)
-				bubble_up = false;
-			else
-				bubble_up = true;
-			//bubble_sound = true;
-			bubble_cycle = 0;
-			bubble_kind++;
-		}
-		if (bubble_kind == 3)
-			bubble_kind = 0;
-	}
-	*/
 }
 
 int Game::CreateCurveControlPoints(int counter, Bezier1D *curve)

@@ -77,7 +77,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 						scn->GetCamera(0)->myRotate(-5, glm::vec3(0, 1, 0), -1);
 						scn->GetCamera(2)->myRotate(-5, glm::vec3(0, 1, 0), -1);
 					}
-					else //player moves
+					else if (scn->GetPlayer()->GetPlay() == true && scn->IsActive() == true) //player moves
 					{
 						scn->SetPickedShape(scn->GetPlayer()->GetHeadIndex());
 						scn->GetPlayer()->SetMoveRight(true);
@@ -92,7 +92,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 						scn->GetCamera(0)->myRotate(5, glm::vec3(0, 1, 0), -1);
 						scn->GetCamera(2)->myRotate(5, glm::vec3(0, 1, 0), -1);
 					}
-					else //player moves
+					else if (scn->GetPlayer()->GetPlay() == true && scn->IsActive() == true) //player moves
 					{
 						scn->SetPickedShape(scn->GetPlayer()->GetHeadIndex());
 						scn->GetPlayer()->SetMoveLeft(true);
@@ -107,7 +107,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 						scn->GetCamera(0)->myRotate(5, glm::vec3(1, 0, 0), -1);
 						scn->GetCamera(2)->myRotate(5, glm::vec3(1, 0, 0), -1);
 					}
-					else //player moves
+					else if (scn->GetPlayer()->GetPlay() == true && scn->IsActive() == true) //player moves
 					{
 						scn->SetPickedShape(scn->GetPlayer()->GetHeadIndex());
 						scn->GetPlayer()->SetMoveUp(true);
@@ -122,7 +122,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 						scn->GetCamera(0)->myRotate(-5, glm::vec3(1, 0, 0), -1);
 						scn->GetCamera(2)->myRotate(-5, glm::vec3(1, 0, 0), -1);
 					}
-					else //player moves
+					else if (scn->GetPlayer()->GetPlay() == true && scn->IsActive() == true) //player moves
 					{
 						scn->SetPickedShape(scn->GetPlayer()->GetHeadIndex());
 						scn->GetPlayer()->SetMoveDown(true);
@@ -130,42 +130,42 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 				}
 				break;
 			case GLFW_KEY_S: //Translate backwards
-				if (scn->GetMainView() == false)
+				if (scn->GetMainView() == false && scn->GetPlayer()->GetPlay() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(1, 0, 0), 0); //x
 					scn->GetCamera(2)->myTranslate(glm::vec3(1, 0, 0), 0); //x
 				}
 				break;
 			case GLFW_KEY_W: //Translate forwards
-				if (scn->GetMainView() == false)
+				if (scn->GetMainView() == false && scn->GetPlayer()->GetPlay() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(-1, 0, 0), 0); //x
 					scn->GetCamera(2)->myTranslate(glm::vec3(-1, 0, 0), 0); //x
 				}
 				break;
 			case GLFW_KEY_A: //Translate left
-				if (scn->GetMainView() == false)
+				if (scn->GetMainView() == false && scn->GetPlayer()->GetPlay() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, 1), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, 1), 0); //z
 				}
 				break;
 			case GLFW_KEY_D: //Translate right
-				if (scn->GetMainView() == false)
+				if (scn->GetMainView() == false && scn->GetPlayer()->GetPlay() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 0, -1), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 0, -1), 0); //z
 				}
 				break;
 			case GLFW_KEY_E: //Translate up
-				if (scn->GetMainView() == false)
+				if (scn->GetMainView() == false && scn->GetPlayer()->GetPlay() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, 1, 0), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, 1, 0), 0); //z
 				}
 				break;
 			case GLFW_KEY_Q: //Translate down
-				if (scn->GetMainView() == false)
+				if (scn->GetMainView() == false && scn->GetPlayer()->GetPlay() == false)
 				{
 					scn->GetCamera(0)->myTranslate(glm::vec3(0, -1, 0), 0); //z
 					scn->GetCamera(2)->myTranslate(glm::vec3(0, -1, 0), 0); //z

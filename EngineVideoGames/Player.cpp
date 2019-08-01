@@ -20,7 +20,7 @@ Player::Player(Scene* Scn, int Head_index, int Num_of_links)
 	move_left = false;
 	move_up = false;
 	move_down = false;
-	play = false;
+	play = true;
 	direction = glm::vec3(-1, 0, 0);
 }
 

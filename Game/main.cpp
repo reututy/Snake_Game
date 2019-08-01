@@ -66,14 +66,14 @@ int main(int argc, char *argv[])
 	scn->AddTexture("../res/textures/game/water_ground.png", false); //5
 	//Obstacles textures:
 	scn->AddTexture("../res/textures/game/rock.png", false); //6
-	scn->AddTexture("../res/textures/game/bubble_blue.png", false); //7
+	scn->AddTexture("../res/textures/game/bubble.png", false); //7
 	scn->AddTexture("../res/textures/game/black.png", false); //8
 	scn->AddTexture("../res/textures/game/door.png", false); //9
 	//Rewords textures:
 	scn->AddTexture("../res/textures/shines/gold_shine.png", false); //10
 	scn->AddTexture("../res/textures/shines/red_shine.png", false); //11
 	scn->AddTexture("../res/textures/shines/pink_shine.png", false); //12
-
+	//Menues textures:
 	scn->AddTexture("../res/textures/Menues-min/MainMenu0-min.png", false); //13
 	scn->AddTexture("../res/textures/Menues-min/MainMenu1-min.png", false); //14
 	scn->AddTexture("../res/textures/Menues-min/MainMenu2-min.png", false); //15
@@ -86,7 +86,11 @@ int main(int argc, char *argv[])
 	scn->AddTexture("../res/textures/Menues-min/WinStar1-min.png", false); //22
 	scn->AddTexture("../res/textures/Menues-min/WinStar2-min.png", false); //23
 	scn->AddTexture("../res/textures/Menues-min/WinStar3-min.png", false); //24
-
+	//Animals textures:
+	scn->AddTexture("../res/textures/game/Walrus.png", false); //25
+	scn->AddTexture("../res/textures/game/sea_horse.png", false); //26
+	scn->AddTexture("../res/textures/game/fish1.png", false); //27
+	scn->AddTexture("../res/textures/game/coral.png", false); //28
 	
 	
 
