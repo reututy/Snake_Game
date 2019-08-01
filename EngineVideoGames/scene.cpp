@@ -198,7 +198,7 @@ void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debu
 		glViewport(0,0,cameras[cameraIndx]->GetWidth(),cameras[cameraIndx]->GetHeight());
 
 	if (cameraIndx == 0)
-		Camera = shapes[chainParents[snake->GetHeadIndex()+1]]->makeTrans() * Camera;
+		Camera = shapes[chainParents[snake->GetHeadIndex()+1]]->makeTransScale() * Camera;
 
 	glm::mat4 MVP = Projection * Normal;
 	int p = pickedShape;
