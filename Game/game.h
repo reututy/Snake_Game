@@ -34,6 +34,7 @@ public:
 	void addWinDoor();
 	void addMenus();
 	void addBubbles();
+	void addAnimals();
 	void CreateBoundingBoxes(BVH* bvh, int parent, int level);
 
 	//	void Update( glm::mat4 MVP ,glm::mat4 *jointTransforms,const int length,const int  shaderIndx);
@@ -44,7 +45,7 @@ public:
 	void Motion();
 
 	/* Reut's addings:*/
-	void SkinningUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, const glm::mat4 &Normal, const glm::mat4 &Camera, glm::vec4 dqRot[5], glm::vec4 dqTrans[5], const int shaderIndx, int index);
+	void SkinningUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, const glm::mat4 &Normal, const glm::mat4 &Camera, glm::vec4 dqRot[5], glm::vec4 dqTrans[5], int head_index, const int shaderIndx, int index);
 	void LBSUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, const glm::mat4 &Normal, glm::mat4 jointTransforms[5], glm::ivec3 jointIndices, const int shaderIndx, int index);
 	//void playTune(char* str);
 

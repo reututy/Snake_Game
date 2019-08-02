@@ -248,7 +248,7 @@ void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debu
 			{
 				//Update(MV1, Projection, Camera, Normal1, shapes[i]->GetShader());
 				//UpdateLBS(MV1, Projection, Camera, Normal1, jointTransforms, 5, i-snake->GetHeadIndex(), shapes[i]->GetShader());
-				SkinningUpdate(MV1, Projection, Normal1, Camera, dqRot, dqTrans, shapes[i]->GetShader(), i);
+				SkinningUpdate(MV1, Projection, Normal1, Camera, dqRot, dqTrans, snake->GetHeadIndex(), shapes[i]->GetShader(), i);
 				shapes[i]->Draw(shaders, textures, false);
 
 			}
@@ -256,7 +256,7 @@ void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debu
 			{
 				//Update(MV1, Projection, Camera, Normal1, shapes[i]->GetShader());
 				//UpdateLBS(MV1, Projection, Camera, Normal1, jointTransforms, 5, i-snake->GetHeadIndex(), shapes[i]->GetShader());
-				SkinningUpdate(MV1, Projection, Normal1, Camera, dqRot, dqTrans, shapes[i]->GetShader(), i);
+				SkinningUpdate(MV1, Projection, Normal1, Camera, dqRot, dqTrans, snake->GetHeadIndex(), shapes[i]->GetShader(), i);
 				shapes[i]->Draw(shaders, textures, true);
 			}
 		}
@@ -886,12 +886,12 @@ void Scene::CheckCollisionDetection(int num_of_shape)
 				playTune("Sounds/win.wav");
 				Deactivate();
 				SetFinishView();
-				if (star_count <= 3)
-					SetShapeTex(40, 16);
-				else if (star_count > 3 && star_count <= 6)
-					SetShapeTex(40, 17);
+				if (star_count <= 1)
+					SetShapeTex(40, 22);
+				else if (star_count >= 2 && star_count <= 6)
+					SetShapeTex(40, 23);
 				else if (star_count == 7)
-					SetShapeTex(40, 18);
+					SetShapeTex(40, 24);
 				SetMainView();
 			}
 			else if (shape2->GetMesh()->GetKind() == MeshConstructor::Kind::Wall && diff < 40 && shape2->Getfound() == false)
@@ -899,7 +899,7 @@ void Scene::CheckCollisionDetection(int num_of_shape)
 				shape2->Setfound(true);
 				playTune("Sounds/loose.wav");
 				Deactivate();
-				SetShapeTex(40, 15);
+				SetShapeTex(40, 21);
 				SetFinishView();
 				SetMainView();
 			}
@@ -920,7 +920,7 @@ void Scene::CheckCollisionDetection(int num_of_shape)
 					shape2->Setfound(true);
 					playTune("Sounds/loose.wav");
 					Deactivate();
-					SetShapeTex(40, 15);
+					SetShapeTex(40, 21);
 					SetFinishView();
 					SetMainView();
 				}

@@ -90,7 +90,9 @@ int main(int argc, char *argv[])
 	scn->AddTexture("../res/textures/game/Walrus.png", false); //25
 	scn->AddTexture("../res/textures/game/sea_horse.png", false); //26
 	scn->AddTexture("../res/textures/game/fish1.png", false); //27
-	scn->AddTexture("../res/textures/game/coral.png", false); //28
+	scn->AddTexture("../res/textures/game/coral1.png", false); //28
+	scn->AddTexture("../res/textures/game/coral2.png", false); //29
+	scn->AddTexture("../res/textures/game/coral3.png", false); //30
 	
 	
 

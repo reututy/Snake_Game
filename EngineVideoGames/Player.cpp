@@ -39,7 +39,7 @@ void Player::CreatePlayer()
 			scn->addShapeCopy(7, -1, Scene::QUADS, MeshConstructor::Kind::Snake); //Add copy of head (7)
 			scn->SetNumOfShape();
 			scn->SetPickedShape(head_index);
-			//scn->shapeTransformation(Scene::xGlobalRotate, 180.0f);	//in order to put the eyes in place
+			//scn->shapeTransformation(Scene::xGlobalRotate, 170.0f);	//in order to put the eyes in place
 			scn->setParent(i, -1);
 			scn->SetShapeTex(head_index, 1);
 		}
@@ -49,7 +49,7 @@ void Player::CreatePlayer()
 			scn->SetNumOfShape();
 			scn->SetPickedShape(scn->GetSizeOfShapes());
 			scn->shapeTransformation(Scene::xGlobalTranslate, 1.6);
-			//scn->shapeTransformation(Scene::xGlobalRotate, 180.0f);	//in order to put the eyes in place
+			//scn->shapeTransformation(Scene::xGlobalRotate, 170.0f);	//in order to put the eyes in place
 			scn->shapeTransformation(Scene::xGlobalTranslate, mone);
 			scn->shapeTransformation(Scene::xLocalTranslate, mone);
 			scn->setParent(i, i - 1);
@@ -61,17 +61,15 @@ void Player::CreatePlayer()
 			scn->SetNumOfShape();
 			scn->SetPickedShape(scn->GetSizeOfShapes());
 			scn->shapeTransformation(Scene::xGlobalTranslate, 1.6);
-			//scn->shapeTransformation(Scene::xGlobalRotate, 180.0f);	//in order to put the eyes in place
+			//scn->shapeTransformation(Scene::xGlobalRotate, 170.0f);	//in order to put the eyes in place
 			scn->shapeTransformation(Scene::xGlobalTranslate, mone);
 			scn->shapeTransformation(Scene::xLocalTranslate, mone);
 			scn->setParent(i, i - 1);
 			scn->SetShapeTex(i, 0);
 		}
-		//Set snake shader - works with LBSUpdate:
+		//Set snake shader:
 		scn->SetShapeShader(i, SKINING_SHADER);
 	}
-	//scn->SetPickedShape(head_index); //to add camera->maketrans of the camera
-	//scn->shapeTransformation(Scene::xGlobalTranslate, 20);
 }
 
 void Player::MoveRight()

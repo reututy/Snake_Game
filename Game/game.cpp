@@ -17,7 +17,6 @@
 bool once = false;
 int cycle = 0;
 int bubble_cycle = 0;
-bool bubble_up = true;
 bool bubble_sound = true;
 int bubble_kind = 0;
 int reward_cycle = 0;
@@ -318,7 +317,7 @@ void Game::addRewards()
 	SetNumOfShape();
 	pickedShape = 33;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, -45);
+	shapeTransformation(xGlobalTranslate, -40);
 	shapeTransformation(yGlobalTranslate, -15);
 	shapeTransformation(zGlobalTranslate, 40);
 	SetShapeShader(pickedShape, BASIC_SHADER);
@@ -327,8 +326,8 @@ void Game::addRewards()
 	SetNumOfShape();
 	pickedShape = 34;
 	SetShapeTex(pickedShape, REWARD_TEX);
-	shapeTransformation(xGlobalTranslate, 10);
-	shapeTransformation(zGlobalTranslate, 45);
+	shapeTransformation(xGlobalTranslate, 13);
+	shapeTransformation(zGlobalTranslate, 43);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //35 Add copy cube = Obstacle 1
@@ -336,7 +335,7 @@ void Game::addRewards()
 	pickedShape = 35;
 	SetShapeTex(pickedShape, REWARD_TEX);
 	shapeTransformation(yGlobalTranslate, -10);
-	shapeTransformation(zGlobalTranslate, -42);
+	shapeTransformation(zGlobalTranslate, -46);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
 	addShapeCopy(32, -1, TRIANGLES, MeshConstructor::Kind::Reward); //36 Add copy cube = Obstacle 1
@@ -344,7 +343,7 @@ void Game::addRewards()
 	pickedShape = 36;
 	SetShapeTex(pickedShape, REWARD_TEX);
 	shapeTransformation(xGlobalTranslate, -49);
-	shapeTransformation(yGlobalTranslate, -4);
+	shapeTransformation(yGlobalTranslate, -5);
 	shapeTransformation(zGlobalTranslate, -48);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
@@ -362,7 +361,7 @@ void Game::addRewards()
 	SetShapeTex(pickedShape, REWARD_TEX);
 	shapeTransformation(xGlobalTranslate, 46);
 	shapeTransformation(yGlobalTranslate, -4);
-	shapeTransformation(zGlobalTranslate, -8);
+	shapeTransformation(zGlobalTranslate, -10);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 	
 }
@@ -401,17 +400,14 @@ void Game::addMenus()
 
 void Game::addBubbles()
 {
-	int X = 3000;
-	int Z = 3000;
-
 	//Center bubbles:
 	addShapeFromFile("../res/objs/sphere.obj", -1, TRIANGLE_STRIP, MeshConstructor::Kind::Bubble, BUBBLE_SCALE);	//bubble ball
 	SetNumOfShape();
 	pickedShape = 41;
 	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xGlobalTranslate, -0.8);
-	shapeTransformation(yGlobalTranslate, 0.085);
-	shapeTransformation(zGlobalTranslate, 1);
+	shapeTransformation(xGlobalTranslate, -4.4);
+	shapeTransformation(yGlobalTranslate, -5.7);
+	shapeTransformation(zGlobalTranslate, -35);
 	shapeTransformation(xScale, 0.1);
 	shapeTransformation(yScale, 0.1);
 	shapeTransformation(zScale, 0.1);
@@ -421,9 +417,9 @@ void Game::addBubbles()
 	SetNumOfShape();
 	pickedShape = 42;
 	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xGlobalTranslate, -1.3);
-	shapeTransformation(yGlobalTranslate, 0.2);
-	shapeTransformation(zGlobalTranslate, 1);
+	shapeTransformation(xGlobalTranslate, -4.7);
+	shapeTransformation(yGlobalTranslate, -5.4);
+	shapeTransformation(zGlobalTranslate, -35);
 	shapeTransformation(xScale, 0.1);
 	shapeTransformation(yScale, 0.1);
 	shapeTransformation(zScale, 0.1);
@@ -433,14 +429,21 @@ void Game::addBubbles()
 	SetNumOfShape();
 	pickedShape = 43;
 	SetShapeTex(pickedShape, BUBBLE_TEX);
-	shapeTransformation(xGlobalTranslate, -1.6);
-	shapeTransformation(yGlobalTranslate, 0.6);
-	shapeTransformation(zGlobalTranslate, 1);
+	shapeTransformation(xGlobalTranslate, -5);
+	shapeTransformation(yGlobalTranslate, -4.4);
+	shapeTransformation(zGlobalTranslate, -35);
 	shapeTransformation(xScale, 0.1);
 	shapeTransformation(yScale, 0.1);
 	shapeTransformation(zScale, 0.1);
 	SetShapeShader(pickedShape, BASIC_SHADER);
 
+	shapes[41]->Hide();
+	shapes[42]->Hide();
+	shapes[43]->Hide();
+}
+
+void Game::addAnimals()
+{
 	addShapeFromFile("../res/objs/Walrus.obj", -1, TRIANGLES, MeshConstructor::Kind::Default, 0);	//Walrus
 	SetNumOfShape();
 	pickedShape = 44;
@@ -486,6 +489,29 @@ void Game::addBubbles()
 	shapeTransformation(xScale, 0.8);
 	shapeTransformation(yScale, 0.8);
 	shapeTransformation(zScale, 0.8);
+
+	addShapeFromFile("../res/objs/coral.obj", -1, TRIANGLES, MeshConstructor::Kind::Default, 0);	//coral
+	SetNumOfShape();
+	pickedShape = 48;
+	SetShapeTex(pickedShape, 29);
+	shapeTransformation(xGlobalTranslate, -110);
+	shapeTransformation(yGlobalTranslate, -180);
+	shapeTransformation(zGlobalTranslate, 20);
+	shapeTransformation(xGlobalRotate, -90);
+	shapeTransformation(xScale, 0.8);
+	shapeTransformation(yScale, 0.8);
+	shapeTransformation(zScale, 0.8);
+
+	addShapeFromFile("../res/objs/coral.obj", -1, TRIANGLES, MeshConstructor::Kind::Default, 0);	//coral
+	SetNumOfShape();
+	pickedShape = 49;
+	SetShapeTex(pickedShape, 30);
+	shapeTransformation(yGlobalTranslate, -180);
+	shapeTransformation(zGlobalTranslate, 60);
+	shapeTransformation(xGlobalRotate, -90);
+	shapeTransformation(xScale, 0.8);
+	shapeTransformation(yScale, 0.8);
+	shapeTransformation(zScale, 0.8);
 }
 
 void Game::Init()
@@ -497,6 +523,7 @@ void Game::Init()
 	addWinDoor();
 	addMenus();
 	addBubbles();
+	addAnimals();
 	
 	//Create the snake:
 	snake = new Player((Scene*) this, GetSizeOfShapes() + 1, 3);
@@ -814,42 +841,68 @@ void Game::Motion()
 		cycle++;
 	}
 	
-	//Changing colors for rewards:
-	if (reward_cycle == 10)
+	if (GetMainView() == false)
 	{
-		for (int i = 0; i < GetSizeOfShapes(); i++)
+		//Changing colors for rewards:
+		if (reward_cycle == 10)
 		{
-			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
-				SetShapeTex(i, 10);
+			for (int i = 0; i < GetSizeOfShapes(); i++)
+			{
+				if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+					SetShapeTex(i, 10);
+			}
 		}
-	}
-	else if (reward_cycle == 30)
-	{
-		for (int i = 0; i < GetSizeOfShapes(); i++)
+		else if (reward_cycle == 30)
 		{
-			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
-				SetShapeTex(i, 11);
+			for (int i = 0; i < GetSizeOfShapes(); i++)
+			{
+				if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+					SetShapeTex(i, 11);
+			}
 		}
-	}
-	else if (reward_cycle == 50)
-	{
-		for (int i = 0; i < GetSizeOfShapes(); i++)
+		else if (reward_cycle == 50)
 		{
-			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
-				SetShapeTex(i, 12);
+			for (int i = 0; i < GetSizeOfShapes(); i++)
+			{
+				if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+					SetShapeTex(i, 12);
+			}
 		}
-	}
-	else if (reward_cycle == 70)
-	{
-		for (int i = 0; i < GetSizeOfShapes(); i++)
+		else if (reward_cycle == 70)
 		{
-			if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
-				SetShapeTex(i, 11);
+			for (int i = 0; i < GetSizeOfShapes(); i++)
+			{
+				if (GetShape(i)->GetMesh()->GetKind() == MeshConstructor::Kind::Reward)
+					SetShapeTex(i, 11);
+			}
 		}
+		if (reward_cycle == 80)
+			reward_cycle = 0;
+		reward_cycle++;
+
+		//Bubbles:
+		if (bubble_sound == true)
+		{
+			playTune("Sounds/blop.wav");
+			bubble_sound = false;
+		}
+		if (bubble_cycle == 10)
+			shapes[41]->Unhide();
+		if (bubble_cycle == 30)
+			shapes[42]->Unhide();
+		if (bubble_cycle == 50)
+			shapes[43]->Unhide();
+
+		if (bubble_cycle == BUBBLE_CYCLE)
+		{
+			shapes[41]->Hide();
+			shapes[42]->Hide();
+			shapes[43]->Hide();
+			bubble_cycle = 0;
+			bubble_sound == true;
+		}
+		bubble_cycle++;
 	}
-	if (reward_cycle == 80)
-		reward_cycle = 0;
-	reward_cycle++;
 }
 
 int Game::CreateCurveControlPoints(int counter, Bezier1D *curve)
@@ -933,7 +986,7 @@ void Game::UpdateLBS(const glm::mat4 &MV, const glm::mat4 &Projection, const glm
 	CheckCollisionDetection(snake->GetHeadIndex());
 }
 
-void Game::SkinningUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, const glm::mat4 &Normal, const glm::mat4 &Camera, glm::vec4 dqRot[5], glm::vec4 dqTrans[5], const int shaderIndx, int index)
+void Game::SkinningUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, const glm::mat4 &Normal, const glm::mat4 &Camera, glm::vec4 dqRot[5], glm::vec4 dqTrans[5], int head_index, const int shaderIndx, int index)
 {
 	int prev_shape = pickedShape;
 	if (!once)
@@ -950,6 +1003,7 @@ void Game::SkinningUpdate(const glm::mat4 &MV, const glm::mat4 &Projection, cons
 	s->SetUniform4vArr5("dqRot", dqRot, shaderIndx);
 	s->SetUniform4vArr5("dqTrans", dqTrans, shaderIndx);
 	s->SetUniform1i("index", index);
+	s->SetUniform1i("head_index", head_index);
 	s->SetUniform4f("lightDirection", 0.0f, 0.0f, 0.0f, 0.0f);
 
 	if (shaderIndx == 0) //picking shader
