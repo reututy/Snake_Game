@@ -53,7 +53,7 @@ In camera mode you can rotate the camera using the arrows - up, down, right, and
 
 You can also translate the camera using 'W', 'S', 'A', 'D', 'E', 'Q' - forwards, backwards, right, left, up, and down repectively.
 
-Under the sea, during the level, you can notice some living creators.
+Under the sea, during the level, you can notice some living creatures.
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/game/sea_horse_pic.png)
 
@@ -62,5 +62,7 @@ Under the sea, during the level, you can notice some living creators.
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/game/corals_pic.png)
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/game/coral1_pic.png)
+
+Loading the game takes about 2 minutes due to the living creatures.
 
                                               H A V E    F U N !
