@@ -25,7 +25,15 @@ Your snake can swim everywhere using the arrows - up, down, right, and left.
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/Menues-min/HowToPlay0-min.png)
 
-If you manage to collect all rewards you are graded with three starts!
+If you collect up to ONE reward you are graded with one star.
+
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/Menues-min/WinStar1-min.png)
+
+If you collect between TWO and SIX rewards you are graded with two stars.
+
+![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/Menues-min/WinStar2-min.png)
+
+If you manage to collect all rewards you are graded with three stars!
 
 ![alt text](https://raw.githubusercontent.com/reututy/Snake_Game/master/res/textures/Menues-min/WinStar3-min.png)
 
